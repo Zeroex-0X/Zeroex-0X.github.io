@@ -39,7 +39,7 @@ svg{display:block}
 /* hero */
 .hero{display:grid;gap:1.5rem;align-items:center;padding-block:clamp(1rem,4vw,3rem) calc(var(--cut) + 2.5rem)}
 .hero-mark{width:min(78%,17rem);justify-self:start}
-.hero h1{font-size:clamp(2.7rem,8.4vw,5.6rem);font-weight:750;max-width:11ch;text-wrap:balance}
+.hero h1{font-size:clamp(2.7rem,8.4vw,5.6rem);font-weight:750;max-width:12ch;text-wrap:balance}
 .hero p{margin-top:1.25rem;max-width:30rem;color:var(--muted);font-size:1.15rem}
 .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
 @media (min-width:56rem){
@@ -75,8 +75,11 @@ svg{display:block}
 
 /* find / link rows */
 .linkrow{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;padding-block:1.25rem;border-bottom:1.5px solid var(--line);text-decoration:none}
+.linkrow .lead{display:inline-flex;align-items:center;gap:.9rem}
+.ico{width:1.7rem;height:1.7rem;flex:none}
 .linkrow strong{font-family:var(--display);font-size:clamp(1.5rem,4vw,2.1rem);font-weight:700;letter-spacing:-.02em}
-.linkrow span{color:var(--muted);overflow-wrap:anywhere;text-align:right}
+.linkrow .handle{color:var(--muted);overflow-wrap:anywhere;text-align:right;min-width:0}
+@media (max-width:34rem){.linkrow{flex-direction:column;gap:.2rem}.linkrow .handle{text-align:left;padding-left:2.6rem}}
 .linkrow:hover strong{text-decoration:underline;text-underline-offset:.25em;text-decoration-thickness:2px}
 
 /* support teaser */
@@ -99,6 +102,10 @@ svg{display:block}
 .foot{border-top:1.5px solid var(--line);margin-top:2rem;padding-block:1.75rem 2.5rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem 2rem;color:var(--muted);font-size:.98rem}
 .foot a{text-decoration:none}
 .foot a:hover{text-decoration:underline}
+.foot-icons{display:inline-flex;gap:1.1rem;align-items:center}
+.foot-icons a{display:inline-flex;padding:.3rem;color:var(--ink)}
+.foot-icons .ico{width:1.45rem;height:1.45rem}
+.foot-icons a:hover{opacity:.7}
 
 /* the one motion: the two halves slide along the cut and meet */
 @media (prefers-reduced-motion:no-preference){
