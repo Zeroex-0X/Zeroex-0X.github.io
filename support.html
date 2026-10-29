@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support Zeroex</title>
+<meta name="description" content="Support the development of Zeroex apps through chaBondhu.">
+<meta property="og:title" content="Support Zeroex">
+<meta property="og:description" content="Support the development of Zeroex apps through chaBondhu.">
+<meta name="theme-color" content="#161615">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Schibsted+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><path id="zo" fill-rule="evenodd" d="M391 15 L374 9 L355 4 L335 1 L322 0 L190 0 L168 2 L148 6 L127 13 L109 21 L92 31 L72 46 L54 63 L45 73 L32 90 L20 111 L13 128 L8 141 L5 153 L1 175 L0 189 L0 411 L1 425 L3 441 L9 464 L14 478 L20 493 L31 512 L42 528 L57 545 L76 563 L94 575 L116 587 L125 591 L143 597 L146 597 L303 436 L558 178 L556 175 L518 129 L480 84 L465 67 L449 52 L437 42 L426 34 L409 24ZM351 139 L360 144 L371 155 L376 162 L380 171 L384 183 L386 194 L386 306 L385 310 L383 315 L381 319 L231 471 L227 474 L221 475 L191 475 L177 473 L172 471 L163 467 L151 458 L145 452 L137 441 L134 435 L130 425 L128 416 L127 408 L127 205 L127 198 L129 186 L133 175 L137 167 L146 155 L153 148 L160 143 L168 139 L176 135 L191 132 L214 131 L238 132 L313 131 L326 131 L337 133 L345 136Z"/><path id="zx" d="M899 21 L734 21 L729 21 L722 23 L716 26 L711 29 L677 63 L586 156 L586 158 L598 172 L602 178 L603 181 L603 185 L602 189 L601 192 L564 228 L559 234 L232 564 L195 601 L346 601 L355 599 L361 596 L366 592 L377 581 L507 446 L546 405 L547 405 L604 465 L631 495 L721 592 L727 596 L737 600 L744 601 L908 601 L908 601 L818 499 L634 298 L636 295 L701 227 L844 78 L899 22Z"/></defs></svg><a class="skip" href="#main">Skip to content</a>
+<header class="wrap top">
+  <a class="brand" href="index.html" aria-label="Zeroex home">
+    <svg viewBox="0 0 908 601" class="glyph" aria-hidden="true"><use href="#zo"/><use href="#zx"/></svg>
+    <span>Zeroex</span>
+  </a>
+  <nav class="nav" aria-label="Main">
+    <a href="index.html#apps">Apps</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="support.html" aria-current="page">Support</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="wrap page-title" aria-labelledby="h">
+    <h1 id="h">Support Zeroex</h1>
+    <p>If Zeroex apps are useful to you, you can help keep them being built and maintained.</p>
+  </section>
+
+  <section class="wrap" aria-label="Ways to support">
+    <div id="methods"></div>
+    <noscript>
+      <div class="method"><div><h2>chaBondhu</h2><p>Support Zeroex through chaBondhu.</p></div>
+      <a class="btn" href="https://chabondhu.com/zeroex">Open chaBondhu</a></div>
+    </noscript>
+  </section>
+
+  <section class="section wrap" aria-labelledby="free-h">
+    <h2 id="free-h" style="font-size:clamp(1.7rem,4.5vw,2.4rem);margin-bottom:1rem">Other ways to help</h2>
+    <ul class="ways">
+      <li>Tell a friend about an app you like.</li>
+      <li>Report a bug or suggest an idea on the <a href="https://t.me/zeroex_0x" target="_blank" rel="noopener">Telegram channel</a>.</li>
+      <li>Follow Zeroex on <a href="https://github.com/Zeroex-0X" target="_blank" rel="noopener">GitHub</a> and <a href="https://www.facebook.com/zeroex.0X" target="_blank" rel="noopener">Facebook</a>.</li>
+    </ul>
+  </section>
+</main>
+<footer class="wrap foot">
+  <span>From Zeroex</span>
+  <span><a href="https://github.com/Zeroex-0X" target="_blank" rel="noopener">GitHub</a> &nbsp; <a href="https://www.facebook.com/zeroex.0X" target="_blank" rel="noopener">Facebook</a> &nbsp; <a href="https://t.me/zeroex_0x" target="_blank" rel="noopener">Telegram</a></span>
+  <span>© 2026 Zeroex</span>
+</footer>
+
+<script>
+/* ============ EDIT HERE ============
+   Add more support methods by adding one more line to this list.
+   Example: { name: "Method name", about: "One line about it.", url: "https://...", cta: "Button text" } */
+const METHODS = [
+  { name: "chaBondhu", about: "Support Zeroex through chaBondhu.", url: "https://chabondhu.com/zeroex", cta: "Open chaBondhu" }
+];
+/* =================================== */
+
+const box = document.getElementById("methods");
+METHODS.forEach(m => {
+  const row = document.createElement("div");
+  row.className = "method";
+  const left = document.createElement("div");
+  const h = document.createElement("h2"); h.textContent = m.name;
+  const p = document.createElement("p"); p.textContent = m.about;
+  left.append(h, p);
+  const a = document.createElement("a");
+  a.className = "btn"; a.href = m.url; a.target = "_blank"; a.rel = "noopener";
+  a.textContent = m.cta;
+  a.setAttribute("aria-label", m.cta + " (opens in a new tab)");
+  row.append(left, a);
+  box.appendChild(row);
+});
+</script>
+</body>
+</html>
