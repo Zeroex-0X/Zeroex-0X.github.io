@@ -11,20 +11,19 @@
    status           : (optional) shown when there are no links yet.   */
 const APPS = [
   {
-    name: "0XDL",
-    about: "A video downloader for Android.",
-    status: "In development"
-  },
-  {
     name: "Annua",
     about: "Birthdays and events, with reminders.",
     icon: "img/annua.png",
     repo: "Zeroex-0X/Annua",
     links: [
-      { label: "Download", url: "https://github.com/Zeroex-0X/Annua/releases/latest/download/Annua.apk" },
-      { label: "Website",  url: "https://zeroex-0x.github.io/Annua/" },
-      { label: "GitHub",   url: "https://github.com/Zeroex-0X/Annua" }
+      { label: "Visit Annua", url: "https://zeroex-0x.github.io/Annua/" },
+      { label: "GitHub",      url: "https://github.com/Zeroex-0X/Annua" }
     ]
+  },
+  {
+    name: "0XDL",
+    about: "A video downloader for Android.",
+    status: "In development"
   }
 ];
 
