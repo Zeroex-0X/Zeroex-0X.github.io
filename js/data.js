@@ -11,6 +11,11 @@
    status           : (optional) shown when there are no links yet.   */
 const APPS = [
   {
+    name: "0XDL",
+    about: "A video downloader for Android.",
+    status: "In development"
+  },
+  {
     name: "Annua",
     about: "Birthdays and events, with reminders.",
     icon: "img/annua.png",
@@ -19,11 +24,6 @@ const APPS = [
       { label: "Visit Annua", url: "https://zeroex-0x.github.io/Annua/" },
       { label: "GitHub",      url: "https://github.com/Zeroex-0X/Annua" }
     ]
-  },
-  {
-    name: "0XDL",
-    about: "A video downloader for Android.",
-    status: "In development"
   }
 ];
 
