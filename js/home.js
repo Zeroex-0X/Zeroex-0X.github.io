@@ -14,7 +14,11 @@ function renderRow(item, actionLabel) {
     main.appendChild(img);
   }
   const left = el("div");
-  left.appendChild(el("h3", "", item.name));
+  const titleLine = el("div", "title-line");
+  titleLine.appendChild(el("h3", "", item.name));
+  const ver = el("span", "ver");
+  titleLine.appendChild(ver);
+  left.appendChild(titleLine);
   left.appendChild(el("p", "muted", item.about));
   const meta = el("p", "muted meta");
   left.appendChild(meta);
@@ -35,6 +39,7 @@ function renderRow(item, actionLabel) {
     li.appendChild(el("span", "pill", item.status));
   }
   li.metaEl = meta;
+  li.verEl = ver;
   return li;
 }
 
@@ -57,16 +62,14 @@ async function getReleases(repo) {
   return d;
 }
 
-async function showStats(app, metaEl) {
+async function showStats(app, metaEl, verEl) {
   const releases = await getReleases(app.repo);
   if (!releases.length) return 0;
   const rel = releases[0];
-  const apk = rel.assets.find(a => /\.apk$/i.test(a.name));
   let total = 0;
   releases.forEach(r => r.assets.forEach(a => { total += a.dl; }));
+  verEl.textContent = "v" + String(rel.tag || "").replace(/^v/i, "");
   const parts = [
-    "Version " + String(rel.tag || "").replace(/^v/i, ""),
-    apk ? Math.round(apk.size / 1048576) + " MB" : "",
     rel.date ? new Date(rel.date).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : "",
     total > 0 ? total.toLocaleString() + " downloads" : ""
   ];
@@ -79,7 +82,7 @@ const jobs = [];
 APPS.forEach(a => {
   const row = renderRow(a, "Get the app");
   appsList.appendChild(row);
-  if (a.repo) jobs.push(showStats(a, row.metaEl).catch(() => 0));
+  if (a.repo) jobs.push(showStats(a, row.metaEl, row.verEl).catch(() => 0));
 });
 Promise.all(jobs).then(list => {
   const sum = list.reduce((x, y) => x + y, 0);

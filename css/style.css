@@ -68,7 +68,11 @@ svg{display:block}
 @media (min-width:44rem){.row{grid-template-columns:1fr auto}}
 
 .row-main{display:flex;align-items:center;gap:1.1rem}
-.app-icon{width:4.25rem;height:4.25rem;border-radius:1.1rem;flex:none;object-fit:cover}
+.app-icon{width:4.25rem;height:4.25rem;border-radius:1.1rem;flex:none;object-fit:cover;border:2px solid var(--line)}
+.band .app-icon{border-color:var(--band-muted)}
+.title-line{display:flex;align-items:baseline;gap:.65rem;flex-wrap:wrap}
+.ver{font-size:.85rem;font-weight:600;border:1.5px solid currentColor;border-radius:999px;padding:.05rem .6rem;opacity:.8;white-space:nowrap}
+.ver:empty{display:none}
 .row-actions{display:flex;flex-wrap:wrap;gap:.75rem}
 .meta{margin-top:.5rem;font-size:.92rem}
 .meta:empty{display:none}
