@@ -67,6 +67,9 @@ svg{display:block}
 .row .muted{margin-top:.35rem;max-width:30rem}
 @media (min-width:44rem){.row{grid-template-columns:1fr auto}}
 
+.row-main{display:flex;align-items:center;gap:1.1rem}
+.app-icon{width:4.25rem;height:4.25rem;border-radius:1.1rem;flex:none;object-fit:cover}
+.row-actions{display:flex;flex-wrap:wrap;gap:.6rem}
 /* generic sections */
 .section{padding-block:clamp(2.5rem,7vw,5rem)}
 .muted{color:var(--muted)}

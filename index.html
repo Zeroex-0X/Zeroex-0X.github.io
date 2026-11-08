@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Zeroex</title>
+<title>Zeroex — Apps, web tools and bots</title>
 <meta name="description" content="Zeroex builds Android apps with Flutter, web tools, web TV, and bots for Telegram, Facebook and WhatsApp.">
 <meta property="og:title" content="Zeroex — Apps, web tools and bots">
 <meta property="og:description" content="Zeroex builds Android apps with Flutter, web tools, web TV, and bots for Telegram, Facebook and WhatsApp.">
@@ -31,8 +31,8 @@
 <main id="main">
   <section class="wrap hero" aria-labelledby="h">
     <div>
-      <h1 id="h">Apps, Web Tools & Bots</h1>
-      <p>Zeroex builds Android apps, web tools, web TV and bots.</p>
+      <h1 id="h">Apps, web tools and bots.</h1>
+      <p>Zeroex builds Android apps with Flutter, web tools, web TV, and bots for Telegram, Facebook and WhatsApp.</p>
       <div class="actions">
         <a class="btn" href="#apps">See the apps</a>
         <a class="btn ghost" href="support.html">Support Zeroex</a>
@@ -86,11 +86,16 @@
 
 <script>
 /* ============ EDIT HERE ============
-   Apps: when an app is ready, put its download page in "link".
-   Leave link as "" while it is still in development.            */
+   Apps: when an app is ready, put its page in "link" (one button)
+   or use "links" (several buttons, see Annua). Leave link as "" while in development.
+   "icon" is optional: put the icon file name (uploaded in the repo).            */
 const APPS = [
   { name: "0XDL",  about: "A video downloader for Android.",     status: "In development", link: "" },
-  { name: "Annua", about: "Birthdays and events, with reminders.", status: "In development", link: "" }
+  { name: "Annua", about: "Birthdays and events, with reminders.", icon: "icon-annua.png",
+    links: [
+      { label: "Website", url: "https://zeroex-0x.github.io/Annua/" },
+      { label: "GitHub",  url: "https://github.com/Zeroex-0X/Annua" }
+    ] }
 ];
 
 /* Projects: add one line per project.
@@ -107,17 +112,28 @@ function el(tag, cls, text) {
 
 function renderRow(item, actionLabel) {
   const li = el("li", "row");
+  const main = el("div", "row-main");
+  if (item.icon) {
+    const img = el("img", "app-icon");
+    img.src = item.icon; img.alt = ""; img.width = 68; img.height = 68;
+    main.appendChild(img);
+  }
   const left = el("div");
   left.appendChild(el("h3", "", item.name));
   left.appendChild(el("p", "muted", item.about));
-  li.appendChild(left);
-  if (item.link) {
-    const a = el("a", "btn", actionLabel);
-    a.href = item.link;
-    a.target = "_blank";
-    a.rel = "noopener";
-    a.setAttribute("aria-label", actionLabel + " " + item.name);
-    li.appendChild(a);
+  main.appendChild(left);
+  li.appendChild(main);
+
+  const links = item.links || (item.link ? [{ label: actionLabel, url: item.link }] : []);
+  if (links.length) {
+    const box = el("div", "row-actions");
+    links.forEach((l, i) => {
+      const a = el("a", i === 0 ? "btn" : "btn ghost", l.label);
+      a.href = l.url; a.target = "_blank"; a.rel = "noopener";
+      a.setAttribute("aria-label", l.label + " – " + item.name);
+      box.appendChild(a);
+    });
+    li.appendChild(box);
   } else if (item.status) {
     li.appendChild(el("span", "pill", item.status));
   }
