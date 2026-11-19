@@ -126,3 +126,15 @@ svg{display:block}
   @keyframes from-x{from{transform:translate(110px,-110px);opacity:0}to{transform:none;opacity:1}}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* support page */
+.row.featured{padding-block:2.4rem}
+.row.featured h3{font-size:clamp(2.3rem,7vw,3.6rem)}
+.handle-line{margin-top:.5rem;font-weight:600;letter-spacing:.01em}
+.help{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.help-card{border:1.5px solid var(--line);border-radius:var(--radius);padding:1.5rem}
+.help-card h3{font-size:1.45rem;margin-bottom:.5rem}
+.help-card p{color:var(--muted)}
+.help-card a{font-weight:600}
+.thanks{display:grid;gap:1.25rem;justify-items:start}
+.thanks h2{font-size:clamp(2.1rem,6vw,3.6rem);font-weight:750}

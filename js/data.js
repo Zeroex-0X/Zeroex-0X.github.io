@@ -13,7 +13,12 @@ const APPS = [
   {
     name: "0XDL",
     about: "A video downloader for Android.",
-    status: "In development"
+    icon: "img/0xdl.png",
+    repo: "Zeroex-0X/0XDL",
+    links: [
+      { label: "Visit 0XDL", url: "https://zeroex-0x.github.io/0XDL/" },
+      { label: "GitHub",     url: "https://github.com/Zeroex-0X/0XDL" }
+    ]
   },
   {
     name: "Annua",
@@ -31,7 +36,9 @@ const APPS = [
    Example: { name: "Project name", about: "One line.", link: "https://github.com/Zeroex-0X/repo" } */
 const PROJECTS = [];
 
-/* SUPPORT METHODS (support page). Add one entry per method. */
+/* SUPPORT METHODS (support page). The first one is shown biggest.
+   handle = the short address shown under the name. */
 const METHODS = [
-  { name: "chaBondhu", about: "Support Zeroex through chaBondhu.", url: "https://chabondhu.com/zeroex", cta: "Open chaBondhu" }
+  { name: "SupportKori", about: "Support Zeroex on SupportKori.", handle: "supportkori.com/zeroex", url: "https://www.supportkori.com/zeroex", cta: "Support on SupportKori" },
+  { name: "chaBondhu",   about: "You can also support Zeroex through chaBondhu.", handle: "chabondhu.com/zeroex", url: "https://chabondhu.com/zeroex", cta: "Open chaBondhu" }
 ];
